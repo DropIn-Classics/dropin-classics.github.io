@@ -118,16 +118,26 @@ def main():
         index = ROOT / "index.html"
         if not index.exists() or index.read_text(encoding="utf-8") != page:
             errors.append("index.html is not what tools/build.py writes (run it)")
-        # Nothing loaded from elsewhere: no scripts, no outside stylesheets,
-        # fonts or pictures.
-        if re.search(r"<script", page, re.I):
-            errors.append("index.html: <script>")
-        for m in re.finditer(r'<(link|img|iframe|source|video|audio)\b[^>]*\b(?:href|src)="(https?:)?//',
-                             page, re.I):
-            errors.append(f"index.html: loads from elsewhere: {m.group(0)}")
-        text = re.sub(r"<[^>]+>", " ", page)
-        for m in re.finditer(r"\b(we|we're|we've|our|ours|us|ourselves)\b", text, re.I):
-            errors.append(f"index.html: '{m.group(0)}' (the page says I, not we)")
+        # Every page: index.html as built, the others (doskit.html) as written.
+        pages = {"index.html": page}
+        for f in files:
+            if f.endswith(".html") and "/" not in f and f not in pages:
+                pages[f] = (ROOT / f).read_text(encoding="utf-8")
+        for name, html in pages.items():
+            # Nothing loaded from elsewhere: no scripts, no outside
+            # stylesheets, fonts or pictures.
+            if re.search(r"<script", html, re.I):
+                errors.append(f"{name}: <script>")
+            for m in re.finditer(r'<(link|img|iframe|source|video|audio)\b[^>]*\b(?:href|src)="(https?:)?//',
+                                 html, re.I):
+                errors.append(f"{name}: loads from elsewhere: {m.group(0)}")
+            text = re.sub(r"<[^>]+>", " ", html)
+            for m in re.finditer(r"\b(we|we're|we've|our|ours|us|ourselves)\b", text, re.I):
+                errors.append(f"{name}: '{m.group(0)}' (the page says I, not we)")
+        # doskit is internal: no link to it anywhere.
+        for name, html in pages.items():
+            if re.search(r"github\.com/[^\"]*doskit", html, re.I):
+                errors.append(f"{name}: links to doskit's repository (it is internal)")
         css = (ROOT / "style.css").read_text(encoding="utf-8")
         if re.search(r"@import|url\(\s*['\"]?(https?:)?//", css):
             errors.append("style.css: loads from elsewhere")

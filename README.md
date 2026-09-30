@@ -7,6 +7,8 @@ organisation aims for and what each released port gives the player.
 
 - `template.html`: the page, with `{{PORTS}}` where the ports go.
 - `ports/*.json`: one record per port (docs/PORT-RECORD.md).
+- `doskit.html`: a page on doskit, the toolkit the ports are made with,
+  written by hand (its header and footer are the template's).
 - `style.css`, `favicon.svg`: the look.
 - `index.html`: made by `tools/build.py`, served by GitHub Pages.
 - `tools/check.py`: what must hold before a commit; `tools/hooks/` its hook.

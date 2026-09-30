@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>doskit · DropIn Classics</title>
+<meta name="description" content="doskit, the workshop behind the DropIn Classics ports: what it is and why it exists.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span>DropIn Classics</a>
+    <nav>
+      <a href="index.html#goals">Goals</a>
+      <a href="index.html#ports">Ports</a>
+      <a href="index.html#start">Getting started</a>
+      <a href="doskit.html" aria-current="page">doskit</a>
+      <a href="https://github.com/DropIn-Classics">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Behind the ports</p>
+    <h1>doskit.<br><span>One workshop for every game.</span></h1>
+    <p class="lead">doskit is the toolkit behind the ports: the tools that take a
+      DOS game's programs apart and check the result against the original, and the
+      parts every port needs, whatever the game. It is nothing to download or play.
+      It is the workshop, and this page says what is in it and why it exists.</p>
+    <div class="actions">
+      <a class="button primary" href="#why">Why it exists</a>
+      <a class="button" href="index.html#ports">See the ports</a>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="section">
+  <div class="wrap">
+    <h2>Why it exists</h2>
+    <div class="prose">
+      <p>Every DOS game is different, but the work of porting one is much the same
+        each time. The game's program has to be taken apart without losing a byte,
+        understood, and rebuilt in a form today's computers can run. And every
+        port then needs the same things around the game: a window, sound and
+        music, the keyboard and game controllers, a way to find your copy of the
+        game, a place for your settings and saves.</p>
+      <p>An earlier port solved all of this for one game. doskit is what was left
+        when everything that belonged to that one game was taken out: the parts a
+        next port can use again. So a new port does not start from nothing, and
+        what one game teaches makes the kit better for the next.</p>
+      <p>It also keeps the ports alike. What every release must give you is
+        written down in the kit: download, unpack, double click; your game found
+        by itself; your settings and saves kept outside the program, so a new
+        version cannot lose them; new versions looked for only if you say yes. A
+        release that falls short of that is not made.</p>
+    </div>
+  </div>
+</section>
+
+<section id="inside" class="section alt">
+  <div class="wrap">
+    <h2>What is in it</h2>
+    <p class="section-lead">Tools for taking a game apart and checking the work,
+      and the shared parts a port is built on.</p>
+    <div class="goals">
+      <article class="goal">
+        <span class="num">01</span>
+        <h3>Taking a program apart</h3>
+        <p>Tools that turn a game's original program into readable source and put
+          it back together. The rebuilt program must match the original exactly,
+          byte for byte: the proof that nothing was missed.</p>
+      </article>
+      <article class="goal">
+        <span class="num">02</span>
+        <h3>A PC of the time, in software</h3>
+        <p>A simulated 1990s PC that runs the original game step by step, the same
+          way every time. It is used to look inside the original and to check the
+          port against it. It is never part of a port.</p>
+      </article>
+      <article class="goal">
+        <span class="num">03</span>
+        <h3>Side-by-side checks</h3>
+        <p>Tools that put the port next to the original at the same moment of the
+          game and show every difference, so a translated part is known to behave
+          as the original did.</p>
+      </article>
+      <article class="goal">
+        <span class="num">04</span>
+        <h3>The same parts for every port</h3>
+        <p>Picture, sound and music, keyboard and controllers on Windows, macOS and
+          Linux; finding your GOG release; a setup screen in the look of a DOS
+          setup program; the new-version check that asks first.</p>
+      </article>
+      <article class="goal">
+        <span class="num">05</span>
+        <h3>A start for the next game</h3>
+        <p>A new port is set up from the kit for a game installed from GOG, with
+          the rules, the checks and the packaging for Windows, macOS and Linux
+          already in place.</p>
+      </article>
+      <article class="goal">
+        <span class="num">06</span>
+        <h3>Checks of its own</h3>
+        <p>The kit tests itself on a small program made for the purpose, so no
+          game is needed to know that it works.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="section">
+  <div class="wrap">
+    <h2>How a port is made with it</h2>
+    <ol class="steps four">
+      <li><h3>Take it apart</h3><p>The game's program is turned into source that
+        rebuilds the identical program. What the tools cannot work out by
+        themselves is added as notes.</p></li>
+      <li><h3>Understand it</h3><p>Each part of the program gets a name and a
+        description, checked by running the original in the simulated PC.</p></li>
+      <li><h3>Translate it</h3><p>Part by part into C, each compared with the
+        original at the same point, then set on the shared parts so it runs on
+        today's systems.</p></li>
+      <li><h3>Play it</h3><p>Every package is downloaded, started on its system
+        and played before a release is announced. The playing is my part.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section made">
+  <div class="wrap made-inner">
+    <h2>Made and used<br>by AI agents</h2>
+    <div>
+      <p>doskit, like the ports, is written and used entirely by AI agents
+        (Claude, by Anthropic). When a game needs something the kit cannot do
+        yet, the kit is extended, with a test of its own, rather than the one
+        port, so the next game gets it too.</p>
+      <p>I decide what the kit is for and what a release must give the player,
+        choose the games, and play what comes out.</p>
+    </div>
+  </div>
+</section>
+
+<section id="not" class="section alt">
+  <div class="wrap">
+    <h2>What it is not</h2>
+    <ul class="brings plain">
+      <li><h4>Not a download</h4><p>doskit is internal and not offered to anyone.
+        There is nothing in it for players: what it makes are the ports.</p></li>
+      <li><h4>No game inside</h4><p>The kit holds no code or data of any game, and
+        neither does a port made with it. The game comes from the copy you
+        own.</p></li>
+      <li><h4>Not an emulator you play in</h4><p>The simulated PC only checks the
+        work. The ports run the translated game directly.</p></li>
+      <li><h4>Not finished</h4><p>So far it has been proven on game programs written
+        by hand in assembly language, as many DOS games were. Games made in other
+        ways will need it to grow.</p></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>DropIn Classics is an independent project, not affiliated with GOG.com or
+      with the games' makers and publishers. The games and their names belong to
+      their owners; the ports contain none of their data.</p>
+    <p><a href="https://github.com/DropIn-Classics">github.com/DropIn-Classics</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

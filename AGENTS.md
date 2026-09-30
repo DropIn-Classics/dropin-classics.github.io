@@ -9,7 +9,9 @@ what is here, docs/PORT-RECORD.md what a port's record holds.
 
 1. `index.html` is generated: change `template.html` (the page) or
    `ports/*.json` (the ports), then run `python3 tools/build.py`. Never
-   edit `index.html` by hand.
+   edit `index.html` by hand. `doskit.html` is written by hand; its
+   header and footer are `template.html`'s (links to the home page as
+   `index.html#...`): change both together.
 2. `python3 tools/check.py` must say `all ok` before every commit (the
    hook runs it; `git config core.hooksPath tools/hooks` once per clone).
    Do not skip it (`--no-verify`). When a port's record changed, also run
@@ -19,7 +21,10 @@ what is here, docs/PORT-RECORD.md what a port's record holds.
    when the user asks: a push publishes the site.
 4. Write in English, for players, not developers: what a port gives the
    person playing, in plain words. No build details, addresses or tool
-   names on the page.
+   names on the page. The one exception is `doskit.html`, which says for
+   readers who are not developers what doskit (the organisation's
+   internal toolkit) is and why it exists: no links to its repository,
+   no names of its parts, and only what its README and docs say.
 5. Say only what is true of the released port. Every sentence in a
    record's `brings` must be backed by the port's repository (its
    README, port/README.md or the players' README.txt) for its latest
