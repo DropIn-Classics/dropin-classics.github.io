@@ -34,6 +34,16 @@ def long_date(iso):
     return f"{d.strftime('%B')} {d.day}, {d.year}"
 
 
+# every port's packages, named as doskit's docs/RELEASE.md says: (button,
+# file name after the slug); releases/latest/download/ always serves the
+# newest release's
+PACKAGES = [
+    ("Windows", "-windows-x64.zip"),
+    ("macOS", "-macos.zip"),
+    ("Linux / Steam Deck", "-linux-x64.tar.gz"),
+]
+
+
 def render_port(p):
     repo = p["repo"]
     chips = "".join(f"<li>{e(x)}</li>" for x in p["platforms"])
@@ -41,6 +51,10 @@ def render_port(p):
         f"      <li><h4>{e(b['title'])}</h4><p>{e(b['text'])}</p></li>"
         for b in p["brings"])
     latest = p["latest"]
+    downloads = "\n".join(
+        f'            <a class="button" href="{e(repo)}/releases/latest/download/'
+        f'{e(p["slug"] + suffix)}">{e(name)}</a>'
+        for name, suffix in PACKAGES)
     return f"""    <article class="port" id="{e(p['slug'])}">
       <div class="port-head">
         <div>
@@ -54,7 +68,10 @@ def render_port(p):
           <div class="version">{e(latest['version'])}</div>
           <div class="date">{e(long_date(latest['date']))}</div>
           <p class="note">{e(latest['note'])}</p>
-          <a class="button" href="{e(repo)}/releases/latest">Download</a>
+          <div class="downloads" aria-label="Download for">
+{downloads}
+          </div>
+          <a class="source" href="{e(repo)}/releases/latest">All files on the release page</a>
           <a class="source" href="{e(repo)}">Source and how it was made</a>
         </aside>
       </div>

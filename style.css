@@ -156,6 +156,7 @@ nav a:hover { color: var(--text); }
 .release .version { font-size: 26px; font-weight: 800; margin: 2px 0 0; }
 .release .date { font-size: 14px; color: var(--muted); }
 .release .note { font-size: 14px; color: var(--muted); margin: 10px 0 16px; max-width: 32ch; }
+.release .downloads { display: grid; gap: 8px; }
 .release .button { color: var(--accent-text); background: var(--accent); border-color: var(--accent); width: 100%; justify-content: center; }
 .release .button:hover { background: var(--accent); filter: brightness(1.08); }
 .release .source { display: block; text-align: center; font-size: 14px; margin-top: 10px; }

@@ -72,10 +72,15 @@ def check_online(p, errors):
     url = f"{p['repo']}/releases/latest/download/latest.json"
     try:
         with urllib.request.urlopen(url, timeout=20) as r:
-            version = json.load(r)["version"]
+            data = json.load(r)
+            version = data["version"]
     except Exception as exc:  # any failure is reported, not raised
         errors.append(f"{p['slug']}: {url}: {exc}")
         return
+    files = {pkg.get("file") for pkg in data.get("packages", {}).values()}
+    for _, suffix in build.PACKAGES:
+        if p["slug"] + suffix not in files:
+            errors.append(f"{p['slug']}: {p['slug'] + suffix} not in the latest release")
     if version != p["latest"]["version"]:
         errors.append(f"{p['slug']}: GitHub's latest is {version}, the record says "
                       f"{p['latest']['version']}")
