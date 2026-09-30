@@ -27,8 +27,13 @@ what is here, docs/PORT-RECORD.md what a port's record holds.
    versions and dates are copied from the port's repository or from
    GitHub, not from memory.
 6. The organisation is one person: the page speaks in the first person
-   singular ("I", "my"), never "we", "our" or "us", and does not mention
-   agents or who else helped. `tools/check.py` refuses the plural.
+   singular ("I", "me"), never "we", "our" or "us". It is open about
+   who does what: the reverse engineering, the porting and the checks
+   against the original are done entirely by AI agents (Claude); the
+   person chooses the games, sets the goals and tests the ports by
+   playing them. Never say or imply that the person wrote the code
+   ("my code", "I wrote"). `tools/check.py` refuses the plural and
+   those phrases.
 7. Version-control history is never rewritten.
 
 ## Provenance (permanent)

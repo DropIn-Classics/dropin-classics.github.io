@@ -26,7 +26,8 @@ FIELDS = {"slug": str, "game": str, "original": str, "requires": str,
           "brings": list}
 # Words that misstate what a port is, and names that do not belong here.
 FORBIDDEN = ["standalone", "stand-alone", "completely native", "fully native",
-             "contains the game", "pinball fantasies", "pfemu", "pfnative"]
+             "contains the game", "my code", "i wrote", "written by me",
+             "pinball fantasies", "pfemu", "pfnative"]
 # Files allowed to name the forbidden words (to forbid them).
 FORBIDDEN_EXEMPT = {"AGENTS.md", "tools/check.py"}
 # The only kinds of file the site is made of: no pictures, sound or

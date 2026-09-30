@@ -3,7 +3,7 @@
   "game": "Pinball Dreams Deluxe",
   "original": "DOS, CD-ROM, 1994",
   "requires": "Pinball Dreams Deluxe from GOG.com",
-  "provenance": "A native compatibility implementation requiring an installed copy of Pinball Dreams: the package holds only my code, and the game's tables, pictures and music come from your GOG release each time it runs.",
+  "provenance": "A native compatibility implementation requiring an installed copy of Pinball Dreams: the package holds only its own code, and the game's tables, pictures and music come from your GOG release each time it runs.",
   "repo": "https://github.com/DropIn-Classics/pddnative",
   "latest": {
     "version": "v1.03",

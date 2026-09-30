@@ -31,7 +31,7 @@
     <h1>Drop in your copy.<br><span>Play it like it's new.</span></h1>
     <p class="lead">DropIn Classics rebuilds the programs of classic DOS games as native
       programs for Windows, macOS, Linux and the Steam Deck. You bring the game you
-      own; I bring the code that runs it, with a double click and without an
+      own; the port brings the code that runs it, with a double click and without an
       emulator.</p>
     <div class="actions">
       <a class="button primary" href="#ports">See the ports</a>
@@ -54,8 +54,8 @@
       </article>
       <article class="goal">
         <span class="num">02</span>
-        <h3>Your copy, my code</h3>
-        <p>A port holds only code I wrote. The game's data comes from the release
+        <h3>Your copy, open code</h3>
+        <p>A port holds only its own code, open on GitHub. The game's data comes from the release
           you bought, read from it on your machine. Without it, nothing can be
           played.</p>
       </article>
@@ -68,8 +68,9 @@
       <article class="goal">
         <span class="num">04</span>
         <h3>The original, first</h3>
-        <p>The game plays as it did. I check this against the original program
-          running in an emulated PC, byte for byte where it counts.</p>
+        <p>The game plays as it did. Each port is checked against the original
+          program running in an emulated PC, byte for byte where it counts,
+          and then played by me.</p>
       </article>
       <article class="goal">
         <span class="num">05</span>
@@ -94,6 +95,21 @@
   </div>
 </section>
 
+<section id="made" class="section made">
+  <div class="wrap made-inner">
+    <h2>Made by AI,<br>played by a human</h2>
+    <div>
+      <p>The ports are reverse engineered and written entirely by AI agents
+        (Claude, by Anthropic): they take the original programs apart,
+        translate them into C and check the result against the original,
+        step by step.</p>
+      <p>I choose the games, decide what the ports should do for the player
+        and test them by playing them. If something plays differently from
+        the original, tell me in the port's repository on GitHub.</p>
+    </div>
+  </div>
+</section>
+
 <section id="ports" class="section alt">
   <div class="wrap">
     <h2>The ports</h2>
@@ -105,7 +121,7 @@
           <h3>Pinball Dreams Deluxe</h3>
           <p class="port-meta">pddnative &middot; the original: DOS, CD-ROM, 1994</p>
           <ul class="chips"><li>Windows</li><li>macOS (Intel and Apple silicon)</li><li>Linux</li><li>Steam Deck</li></ul>
-          <p class="provenance">A native compatibility implementation requiring an installed copy of Pinball Dreams: the package holds only my code, and the game&#x27;s tables, pictures and music come from your GOG release each time it runs.</p>
+          <p class="provenance">A native compatibility implementation requiring an installed copy of Pinball Dreams: the package holds only its own code, and the game&#x27;s tables, pictures and music come from your GOG release each time it runs.</p>
         </div>
         <aside class="release">
           <div class="label">Latest release</div>

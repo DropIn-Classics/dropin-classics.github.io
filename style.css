@@ -216,3 +216,13 @@ nav a:hover { color: var(--text); }
 .footnotes { list-style: none; padding: 0; margin: 28px 0 0; color: var(--muted); font-size: 14px; max-width: 72ch; }
 .footnotes li { margin: 0 0 6px; }
 .footnotes span { color: var(--accent); font-weight: 700; margin-right: 4px; }
+
+/* how the ports are made */
+.made { padding: 72px 0; border-top: 1px solid var(--line); }
+.made-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 48px; align-items: start; }
+.made h2 { font-size: clamp(26px, 3.4vw, 34px); }
+.made p { margin: 0 0 14px; color: var(--muted); font-size: 17px; }
+@media (max-width: 720px) {
+  .made { padding: 56px 0; }
+  .made-inner { grid-template-columns: 1fr; gap: 16px; }
+}
