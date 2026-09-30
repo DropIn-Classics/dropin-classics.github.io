@@ -30,7 +30,7 @@
     },
     {
       "title": "The tables as they were",
-      "text": "The table engine is translated routine by routine and compared byte for byte with the original running in an emulated PC, through whole games."
+      "text": "The table engine is independently reimplemented in readable C. Its state and behaviour are compared with the original running in an emulated PC, through whole games."
     },
     {
       "title": "Sound and screen",

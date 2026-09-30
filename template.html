@@ -30,10 +30,10 @@
   <div class="wrap">
     <p class="eyebrow">Classic DOS games, native again</p>
     <h1>Drop in your copy.<br><span>Play it like it's new.</span></h1>
-    <p class="lead">DropIn Classics rebuilds the programs of classic DOS games as native
-      programs for Windows, macOS, Linux and the Steam Deck. You bring the game you
-      own; the port brings the code that runs it, with a double click and without an
-      emulator.</p>
+    <p class="lead">DropIn Classics makes native compatibility implementations of
+      classic DOS games for Windows, macOS, Linux and the Steam Deck. You bring the
+      game you own; the port brings its own code to run it, with a double click and
+      without an emulator.</p>
     <div class="actions">
       <a class="button primary" href="#ports">See the ports</a>
       <a class="button" href="#goals">What I aim for</a>
@@ -50,8 +50,9 @@
       <article class="goal">
         <span class="num">01</span>
         <h3>Native, not emulated</h3>
-        <p>The game's programs translated into readable C that runs directly on
-          today's systems: no DOSBox, no configuration, no cycles to tune.</p>
+        <p>An independent implementation in readable C, made from analysis of the
+          game's original programs and running directly on today's systems: no
+          DOSBox, no configuration, no cycles to tune.</p>
       </article>
       <article class="goal">
         <span class="num">02</span>
@@ -69,9 +70,9 @@
       <article class="goal">
         <span class="num">04</span>
         <h3>The original, first</h3>
-        <p>The game plays as it did. Each port is checked against the original
-          program running in an emulated PC, byte for byte where it counts,
-          and then played by me.</p>
+        <p>The game plays as it did. At critical points, each port's state and
+          behaviour are compared with the original program running in an emulated
+          PC, and then the port is played by me.</p>
       </article>
       <article class="goal">
         <span class="num">05</span>
@@ -101,9 +102,9 @@
     <h2>Made by AI,<br>played by a human</h2>
     <div>
       <p>The ports are reverse engineered and written entirely by AI agents
-        (Claude, by Anthropic): they take the original programs apart,
-        translate them into C and check the result against the original,
-        step by step.</p>
+        (Claude, by Anthropic): they analyse the original programs, reimplement
+        their behaviour in C and compare the new implementations with the
+        originals, step by step.</p>
       <p>I choose the games, decide what the ports should do for the player
         and test them by playing them. If something plays differently from
         the original, tell me in the port's repository on GitHub.</p>

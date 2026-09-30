@@ -30,10 +30,11 @@
   <div class="wrap">
     <p class="eyebrow">Behind the ports</p>
     <h1>doskit.<br><span>One workshop for every game.</span></h1>
-    <p class="lead">doskit is the toolkit behind the ports: the tools that take a
-      DOS game's programs apart and check the result against the original, and the
-      parts every port needs, whatever the game. It is nothing to download or play.
-      It is the workshop, and this page says what is in it and why it exists.</p>
+    <p class="lead">doskit is the toolkit behind the ports: the tools that analyse a
+      DOS game's programs and check an independent implementation against the
+      original, and the parts every port needs, whatever the game. It is nothing to
+      download or play. It is the workshop, and this page says what is in it and why
+      it exists.</p>
     <div class="actions">
       <a class="button primary" href="#why">Why it exists</a>
       <a class="button" href="index.html#ports">See the ports</a>
@@ -46,11 +47,11 @@
     <h2>Why it exists</h2>
     <div class="prose">
       <p>Every DOS game is different, but the work of porting one is much the same
-        each time. The game's program has to be taken apart without losing a byte,
-        understood, and rebuilt in a form today's computers can run. And every
-        port then needs the same things around the game: a window, sound and
-        music, the keyboard and game controllers, a way to find your copy of the
-        game, a place for your settings and saves.</p>
+        each time. The game's program has to be mapped and understood in detail,
+        then its behaviour reimplemented in a form today's computers can run. And
+        every port needs the same things around the game: a window, sound and music,
+        the keyboard and game controllers, a way to find your copy of the game, a
+        place for your settings and saves.</p>
       <p>An earlier port solved all of this for one game. doskit is what was left
         when everything that belonged to that one game was taken out: the parts a
         next port can use again. So a new port does not start from nothing, and
@@ -73,9 +74,10 @@
       <article class="goal">
         <span class="num">01</span>
         <h3>Taking a program apart</h3>
-        <p>Tools that turn a game's original program into readable source and put
-          it back together. The rebuilt program must match the original exactly,
-          byte for byte: the proof that nothing was missed.</p>
+        <p>Tools that turn a game's original program into readable analysis source
+          and reconstruct the same program from it. A byte-for-byte match shows that
+          this working representation accounts for every part. It is separate from
+          the C implementation released in a port.</p>
       </article>
       <article class="goal">
         <span class="num">02</span>
@@ -88,8 +90,8 @@
         <span class="num">03</span>
         <h3>Side-by-side checks</h3>
         <p>Tools that put the port next to the original at the same moment of the
-          game and show every difference, so a translated part is known to behave
-          as the original did.</p>
+          game and show every difference, so each part of the new implementation is
+          known to behave as the original did.</p>
       </article>
       <article class="goal">
         <span class="num">04</span>
@@ -119,14 +121,15 @@
   <div class="wrap">
     <h2>How a port is made with it</h2>
     <ol class="steps four">
-      <li><h3>Take it apart</h3><p>The game's program is turned into source that
-        rebuilds the identical program. What the tools cannot work out by
-        themselves is added as notes.</p></li>
+      <li><h3>Take it apart</h3><p>The game's program is turned into analysis source
+        that reconstructs the same bytes. It is a reference for understanding the
+        program, not the C implementation released to players. What the tools cannot
+        work out by themselves is added as notes.</p></li>
       <li><h3>Understand it</h3><p>Each part of the program gets a name and a
         description, checked by running the original in the simulated PC.</p></li>
-      <li><h3>Translate it</h3><p>Part by part into C, each compared with the
-        original at the same point, then set on the shared parts so it runs on
-        today's systems.</p></li>
+      <li><h3>Reimplement it</h3><p>The behaviour is reimplemented part by part in C.
+        Its state and behaviour are compared with the original at matching points,
+        then it is set on the shared parts so it runs on today's systems.</p></li>
       <li><h3>Play it</h3><p>Every package is downloaded, started on its system
         and played before a release is announced. The playing is my part.</p></li>
     </ol>
@@ -156,8 +159,8 @@
       <li><h4>No game inside</h4><p>The kit holds no code or data of any game, and
         neither does a port made with it. The game comes from the copy you
         own.</p></li>
-      <li><h4>Not an emulator you play in</h4><p>The simulated PC only checks the
-        work. The ports run the translated game directly.</p></li>
+      <li><h4>Not an emulator you play in</h4><p>The simulated PC is used only for
+        analysis and checks. Each port runs its own C implementation directly.</p></li>
       <li><h4>Not finished</h4><p>So far it has been proven on game programs written
         by hand in assembly language, as many DOS games were. Games made in other
         ways will need it to grow.</p></li>
