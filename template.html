@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DropIn Classics</title>
+<meta name="description" content="Classic DOS games made to run natively on today's computers, with the copy you own.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#"><span class="mark" aria-hidden="true"></span>DropIn Classics</a>
+    <nav>
+      <a href="#goals">Goals</a>
+      <a href="#ports">Ports</a>
+      <a href="#start">Getting started</a>
+      <a href="https://github.com/DropIn-Classics">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Classic DOS games, native again</p>
+    <h1>Drop in your copy.<br><span>Play it like it's new.</span></h1>
+    <p class="lead">DropIn Classics rebuilds the programs of classic DOS games as native
+      programs for Windows, macOS, Linux and the Steam Deck. You bring the game you
+      own; we bring the code that runs it, with a double click and without an
+      emulator.</p>
+    <div class="actions">
+      <a class="button primary" href="#ports">See the ports</a>
+      <a class="button" href="#goals">What we aim for</a>
+    </div>
+  </div>
+</section>
+
+<section id="goals" class="section">
+  <div class="wrap">
+    <h2>What we aim for</h2>
+    <p class="section-lead">Every port follows the same promises, on every platform
+      and for every game.</p>
+    <div class="goals">
+      <article class="goal">
+        <span class="num">01</span>
+        <h3>Native, not emulated</h3>
+        <p>The game's programs translated into readable C that runs directly on
+          today's systems: no DOSBox, no configuration, no cycles to tune.</p>
+      </article>
+      <article class="goal">
+        <span class="num">02</span>
+        <h3>Your copy, our code</h3>
+        <p>A port holds only code we wrote. The game's data comes from the release
+          you bought, read from it on your machine. Without it, nothing can be
+          played.</p>
+      </article>
+      <article class="goal">
+        <span class="num">03</span>
+        <h3>Download, unpack, double click</h3>
+        <p>No installer and nothing else to install. The port finds your GOG
+          release by itself on the first start.</p>
+      </article>
+      <article class="goal">
+        <span class="num">04</span>
+        <h3>The original, first</h3>
+        <p>The game plays as it did. We check this against the original program
+          running in an emulated PC, byte for byte where it counts.</p>
+      </article>
+      <article class="goal">
+        <span class="num">05</span>
+        <h3>Better where it gets in the way</h3>
+        <p>Controllers, a setup screen, full screen, shorter waits. Every change
+          to the game's behaviour can be switched off again.</p>
+      </article>
+      <article class="goal">
+        <span class="num">06</span>
+        <h3>Open and quiet</h3>
+        <p>The source and how each port was checked are on GitHub. A port looks
+          for new versions only if you say yes, and sends nothing.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="ports" class="section alt">
+  <div class="wrap">
+    <h2>The ports</h2>
+    <p class="section-lead">What each port gives you, and where to get its newest
+      release.</p>
+{{PORTS}}
+  </div>
+</section>
+
+<section id="start" class="section">
+  <div class="wrap">
+    <h2>Getting started</h2>
+    <ol class="steps">
+      <li><h3>Own the game</h3><p>Buy and install the game's release from
+        <a href="https://www.gog.com/">GOG.com</a>. The port reads its files; it
+        does not replace them.</p></li>
+      <li><h3>Download the port</h3><p>Take the package for your system from the
+        port's latest release and unpack it anywhere.</p></li>
+      <li><h3>Double click</h3><p>On the first start the port finds your copy and
+        sets itself up. The README.txt in the package says what to do if your
+        system asks about an unsigned program.</p></li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>DropIn Classics is an independent project, not affiliated with GOG.com or
+      with the games' makers and publishers. The games and their names belong to
+      their owners; the ports contain none of their data.</p>
+    <p><a href="https://github.com/DropIn-Classics">github.com/DropIn-Classics</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
