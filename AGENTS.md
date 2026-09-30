@@ -26,7 +26,10 @@ what is here, docs/PORT-RECORD.md what a port's record holds.
    release; a feature still being worked on is not listed. Numbers,
    versions and dates are copied from the port's repository or from
    GitHub, not from memory.
-6. Version-control history is never rewritten.
+6. The organisation is one person: the page speaks in the first person
+   singular ("I", "my"), never "we", "our" or "us", and does not mention
+   agents or who else helped. `tools/check.py` refuses the plural.
+7. Version-control history is never rewritten.
 
 ## Provenance (permanent)
 

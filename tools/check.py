@@ -119,6 +119,9 @@ def main():
         for m in re.finditer(r'<(link|img|iframe|source|video|audio)\b[^>]*\b(?:href|src)="(https?:)?//',
                              page, re.I):
             errors.append(f"index.html: loads from elsewhere: {m.group(0)}")
+        text = re.sub(r"<[^>]+>", " ", page)
+        for m in re.finditer(r"\b(we|we're|we've|our|ours|us|ourselves)\b", text, re.I):
+            errors.append(f"index.html: '{m.group(0)}' (the page says I, not we)")
         css = (ROOT / "style.css").read_text(encoding="utf-8")
         if re.search(r"@import|url\(\s*['\"]?(https?:)?//", css):
             errors.append("style.css: loads from elsewhere")
