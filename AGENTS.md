@@ -22,9 +22,9 @@ what is here, docs/PORT-RECORD.md what a port's record holds.
 4. Write in English, for players, not developers: what a port gives the
    person playing, in plain words. No build details, addresses or tool
    names on the page. The one exception is `doskit.html`, which says for
-   readers who are not developers what doskit (the organisation's
-   internal toolkit) is and why it exists: no links to its repository,
-   no names of its parts, and only what its README and docs say.
+   readers who are not developers what doskit (the organisation's public
+   toolkit) is and why it exists: link to its repository, but use no names
+   of its parts and say only what its README and docs say.
 5. Say only what is true of the released port. Every sentence in a
    record's `brings` must be backed by the port's repository (its
    README, port/README.md or the players' README.txt) for its latest
