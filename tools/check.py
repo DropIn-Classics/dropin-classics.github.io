@@ -15,6 +15,7 @@ import sys
 import urllib.request
 from pathlib import Path
 
+sys.dont_write_bytecode = True  # importing build must not leave a tools/__pycache__
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build  # noqa: E402
 
@@ -86,6 +87,29 @@ def check_online(p, errors):
                       f"{p['latest']['version']}")
 
 
+def check_posts(errors):
+    """The blog's sources: one posts/YYYY-MM-DD-slug.md per entry."""
+    paths = sorted((ROOT / "posts").glob("*.md"))
+    if not paths:
+        errors.append("posts/: no posts (the blog needs at least one entry)")
+        return []
+    posts = []
+    seen = set()
+    for path in paths:
+        try:
+            p = build.parse_post(path)
+        except ValueError as exc:
+            errors.append(f"posts/{path.name}: {exc}")
+            continue
+        if p["slug"] in seen:
+            errors.append(f"posts/{path.name}: two posts share this name part")
+            continue
+        seen.add(p["slug"])
+        posts.append(p)
+    posts.sort(key=lambda p: (p["date"], p["slug"]), reverse=True)
+    return posts
+
+
 def main():
     errors = []
     files = tracked_files()
@@ -101,6 +125,8 @@ def main():
         ports.append(p)
     if not ports:
         errors.append("ports/: no records")
+
+    posts = check_posts(errors)
 
     for f in files:
         suffix = Path(f).suffix
@@ -118,8 +144,25 @@ def main():
         index = ROOT / "index.html"
         if not index.exists() or index.read_text(encoding="utf-8") != page:
             errors.append("index.html is not what tools/build.py writes (run it)")
-        # Every page: index.html as built, the others (doskit.html) as written.
-        pages = {"index.html": page}
+        blog = build.render_blog(posts)
+        blog_path = ROOT / "blog.html"
+        if not blog_path.exists() or blog_path.read_text(encoding="utf-8") != blog:
+            errors.append("blog.html is not what tools/build.py writes (run it)")
+        want_posts = set()
+        for p in posts:
+            want_posts.add(p["slug"] + ".html")
+            post_page = build.render_post(p, posts)
+            post_path = ROOT / "posts" / (p["slug"] + ".html")
+            if not post_path.exists() or post_path.read_text(encoding="utf-8") != post_page:
+                errors.append(f"posts/{p['slug']}.html is not what tools/build.py writes (run it)")
+        for stale in sorted((ROOT / "posts").glob("*.html")):
+            if stale.name not in want_posts:
+                errors.append(f"posts/{stale.name}: no such post (run tools/build.py)")
+        # Every page: index.html and blog.html as built, the posts as
+        # built, the others (doskit.html) as written.
+        pages = {"index.html": page, "blog.html": blog}
+        for p in posts:
+            pages[f"posts/{p['slug']}.html"] = build.render_post(p, posts)
         for f in files:
             if f.endswith(".html") and "/" not in f and f not in pages:
                 pages[f] = (ROOT / f).read_text(encoding="utf-8")
