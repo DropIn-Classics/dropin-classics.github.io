@@ -7,8 +7,6 @@ organisation aims for and what each released port gives the player.
 
 - `template.html`: the page, with `{{PORTS}}` where the ports go.
 - `ports/*.json`: one record per port (docs/PORT-RECORD.md).
-- `posts/*.md`: one entry per blog post (docs/BLOG.md).
-- `blog.html`, `posts/*.html`: made by `tools/build.py` from the posts.
 - `doskit.html`: a page on doskit, the public toolkit the ports are made
   with, written by hand (its header and footer are the template's).
 - `style.css`, `favicon.svg`: the look.
