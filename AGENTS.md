@@ -7,9 +7,10 @@ what is here, docs/PORT-RECORD.md what a port's record holds.
 
 ## Rules
 
-1. `index.html` is generated: change `template.html` (the page) or
-   `ports/*.json` (the ports), then run `python3 tools/build.py`. Never
-   edit `index.html` by hand. `doskit.html` is written by hand; its
+1. `index.html`, `blog.html` and `posts/*.html` are generated: change
+   `template.html` (the page), `ports/*.json` (the ports) or `posts/*.md`
+   (the blog, docs/BLOG.md), then run `python3 tools/build.py`. Never
+   edit generated files by hand. `doskit.html` is written by hand; its
    header and footer are `template.html`'s (links to the home page as
    `index.html#...`): change both together.
 2. `python3 tools/check.py` must say `all ok` before every commit (the
