@@ -53,6 +53,9 @@ def check_record(name, p, errors):
         errors.append(f"{name}: file name is not slug + .json")
     if p["repo"] != ORG + p["slug"]:
         errors.append(f"{name}: repo must be {ORG}{p['slug']}")
+    if "package" in p and (not isinstance(p["package"], str) or not p["package"] or
+                         re.search(r"[/\\ ]", p["package"])):
+        errors.append(f"{name}: package must be a plain slug when given")
     if PROVENANCE not in p["provenance"]:
         errors.append(f"{name}: provenance must say '{PROVENANCE} ...'")
     latest = p["latest"]
@@ -79,9 +82,10 @@ def check_online(p, errors):
         errors.append(f"{p['slug']}: {url}: {exc}")
         return
     files = {pkg.get("file") for pkg in data.get("packages", {}).values()}
+    pkg = p.get("package", p["slug"])
     for _, suffix in build.PACKAGES:
-        if p["slug"] + suffix not in files:
-            errors.append(f"{p['slug']}: {p['slug'] + suffix} not in the latest release")
+        if pkg + suffix not in files:
+            errors.append(f"{p['slug']}: {pkg + suffix} not in the latest release")
     if version != p["latest"]["version"]:
         errors.append(f"{p['slug']}: GitHub's latest is {version}, the record says "
                       f"{p['latest']['version']}")

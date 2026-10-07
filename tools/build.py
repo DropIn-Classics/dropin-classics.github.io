@@ -48,6 +48,7 @@ PACKAGES = [
 
 def render_port(p):
     repo = p["repo"]
+    pkg = p.get("package", p["slug"])
     chips = "".join(f"<li>{e(x)}</li>" for x in p["platforms"])
     brings = "\n".join(
         f"      <li><h4>{e(b['title'])}</h4><p>{e(b['text'])}</p></li>"
@@ -55,7 +56,7 @@ def render_port(p):
     latest = p["latest"]
     downloads = "\n".join(
         f'            <a class="button" href="{e(repo)}/releases/latest/download/'
-        f'{e(p["slug"] + suffix)}">{e(name)}</a>'
+        f'{e(pkg + suffix)}">{e(name)}</a>'
         for name, suffix in PACKAGES)
     return f"""    <article class="port" id="{e(p['slug'])}">
       <div class="port-head">

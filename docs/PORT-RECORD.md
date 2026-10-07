@@ -16,11 +16,12 @@ what may be written in it.
 | `latest.date` | its date on GitHub, `YYYY-MM-DD` |
 | `latest.note` | one or two sentences, for players, from the release's notes |
 | `platforms` | where the released packages run, as the player would say it |
+| `package` | the program's slug for its package files, only when it differs from the repository's name (omit otherwise) |
 | `brings` | 3 to 8 entries `{"title", "text"}`: what the port gives the player, most important first; a title of a few words, a text of one to three sentences |
 
 The page has a button per system, each linking to
-`REPO/releases/latest/download/SLUG-windows-x64.zip`, `SLUG-macos.zip`
-and `SLUG-linux-x64.tar.gz` (the names doskit's RELEASE.md gives every
-port's packages), so the buttons are right even before the record is
+`REPO/releases/latest/download/PACKAGE-windows-x64.zip`, `PACKAGE-macos.zip`
+and `PACKAGE-linux-x64.tar.gz` (PACKAGE being `package` above, else the
+slug; the names doskit's RELEASE.md gives every port's packages), so the buttons are right even before the record is
 updated; the version shown is the record's. `tools/check.py --online`
 checks that the latest release has these files.
