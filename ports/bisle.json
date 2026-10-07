@@ -1,0 +1,37 @@
+{
+  "slug": "bisle",
+  "game": "Battle Isle",
+  "original": "DOS, floppy disks",
+  "requires": "Battle Isle from GOG.com",
+  "provenance": "A native compatibility implementation requiring an installed copy of Battle Isle: the package holds only its own code, and the game's data comes from your GOG release each time it runs.",
+  "repo": "https://github.com/DropIn-Classics/bisle",
+  "package": "battle-isle",
+  "latest": {
+    "version": "v1.0",
+    "date": "2026-10-07",
+    "note": "The first release: ISLE, DESERT and MOON in one program on Windows, Linux and macOS. It needs the copy of the game you own; a GOG release is found by itself."
+  },
+  "platforms": ["Windows", "macOS (Intel and Apple silicon)", "Linux", "Steam Deck"],
+  "brings": [
+    {
+      "title": "Starts with a double click",
+      "text": "No emulator, nothing to install. On the first start it finds your GOG release by itself, on Windows also through the registry, on Linux also one installed with Heroic, Lutris, Bottles or Wine, and copies the game's files."
+    },
+    {
+      "title": "Three games in one program",
+      "text": "Battle Isle and the games of its two data disks, each with its intro."
+    },
+    {
+      "title": "Checked against the original",
+      "text": "The game is translated routine by routine and compared with the original running in an emulated PC: whole maps played by two computers, fights of every kind, saves and high scores."
+    },
+    {
+      "title": "A setup screen before the game",
+      "text": "The players' keys, controllers, mouse, sound, full screen and small behaviour changes, each switchable. Two play at one keyboard; a controller or the mouse can stand in for one of them."
+    },
+    {
+      "title": "Your things stay yours",
+      "text": "Settings, saves and high scores live in your user folder: a new version replaces the program's folder and keeps them. It looks for new versions only if you say yes, fetches one small file and sends nothing."
+    }
+  ]
+}
