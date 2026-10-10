@@ -1,0 +1,37 @@
+{
+  "slug": "hl1914-18",
+  "game": "Battle Isle Historyline 1914-1918",
+  "original": "DOS, floppy disks",
+  "requires": "Battle Isle Historyline 1914-1918 from GOG.com",
+  "provenance": "A native compatibility implementation requiring an installed copy of Battle Isle Historyline 1914-1918: the package holds only its own code, and the game's data comes from your GOG release each time it runs.",
+  "repo": "https://github.com/DropIn-Classics/hl1914-18",
+  "package": "history-line",
+  "latest": {
+    "version": "v1.0",
+    "date": "2026-10-10",
+    "note": "The first release: both campaigns with intro, newspapers and outro on Windows, Linux and macOS. It needs the copy of the game you own; a GOG release is found by itself."
+  },
+  "platforms": ["Windows", "macOS (Intel and Apple silicon)", "Linux"],
+  "brings": [
+    {
+      "title": "Starts with a double click",
+      "text": "No emulator, nothing to install. On the first start it finds your GOG release by itself, on Windows also through the registry, on Linux also one installed with Heroic, Lutris, Minigalaxy, Bottles or Wine, and copies the game's files."
+    },
+    {
+      "title": "Both campaigns with everything around them",
+      "text": "Intro, title screens, newspapers between the maps, music, sound effects and outro, all translated from the original."
+    },
+    {
+      "title": "Checked against the original",
+      "text": "The game is translated routine by routine and compared with the original running in an emulated PC: whole maps played by two computers, fights, saves and best scores."
+    },
+    {
+      "title": "A setup screen before the game",
+      "text": "Full screen, the volume, the intro, the players' keys and the controller's buttons, each switchable. Two play at one keyboard."
+    },
+    {
+      "title": "Your things stay yours",
+      "text": "Settings, saves and best scores live in your user folder: a new version replaces the program's folder and keeps them. It looks for new versions only if you say yes, fetches one small file and sends nothing."
+    }
+  ]
+}
